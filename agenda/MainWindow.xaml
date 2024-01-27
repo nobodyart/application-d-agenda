@@ -1,0 +1,27 @@
+﻿<Window x:Class="agenda.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Agenda" Height="450" Width="800">
+    <Grid>
+        <ListBox Name="eventListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="300" Margin="20">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Date}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Width="400" Height="300" Margin="20">
+            <TextBlock Text="Nouvel Événement" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+
+            <TextBox Name="txtTitle" Margin="0,0,0,10"/>
+
+            <DatePicker Name="dpDate" Margin="0,0,0,10"/>
+
+            <Button Content="Ajouter Événement" Click="AddEvent_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
