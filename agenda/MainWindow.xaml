@@ -8,7 +8,7 @@
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Date}"/>
+                        <TextBlock Text="{Binding Date, StringFormat='{}Début: {0:t}'}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -18,8 +18,14 @@
             <TextBlock Text="Nouvel Événement" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
 
             <TextBox Name="txtTitle" Margin="0,0,0,10"/>
-
             <DatePicker Name="dpDate" Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Heure de début: " VerticalAlignment="Center"/>
+                <ComboBox Name="cmbStartHour" Margin="0,0,5,0" Width="50"/>
+                <TextBlock Text=":" VerticalAlignment="Center"/>
+                <ComboBox Name="cmbStartMinute" Margin="0,0,0,0" Width="50"/>
+            </StackPanel>
 
             <Button Content="Ajouter Événement" Click="AddEvent_Click"/>
         </StackPanel>
